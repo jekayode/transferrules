@@ -32,7 +32,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label class="control-label col-sm-2" >Wallet Name</label>
+                        <label class="control-label col-sm-2" >Beneficiary Name</label>
                         <div class="col-sm-10">
                             <input type="text" name="name" id="name" class="form-control">
                         </div>
