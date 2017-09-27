@@ -117,23 +117,26 @@ class WalletController  extends Controller
         return view('admin.wallets.manualfund', ['wallet' => $wallet]);
     }
 
+
     public function manualfundstore($id, Request $request){
+
         //validate wallet data
         $this->validate($request, [
             'name' => 'required',
-            'currency' => 'required',
-            'rule_id' => 'required',
-            'ref_code' => 'required',
+            'amount' => 'required',
+            'user_id' => 'required',
+            'walled_id' => 'required',
+            'method' => 'required',
             'status' => 'required'
         ]);
         
         //get wallet data
-        $walletData = $request->all();
+        $fundingData = $request->all();
         
         //update wallet data
-        Wallet::find($id)->update($walletData);
+        Wallet::find($id)->update($fundingData);
 
-        return redirect()->route('admin.wallets.index')->with('success','wallet update successfully!');
+        return redirect()->route('admin.wallets.index')->with('success','wallet funded successfully!');
     }
 
     

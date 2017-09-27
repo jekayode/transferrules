@@ -15,16 +15,15 @@
         @endif
         <div class="panel panel-default">
             <div class="panel-heading">
-                Edit Wallet <a href="{{ route('wallets.details', $wallet->id) }}" class="label label-primary pull-right">Back</a>
+                Fund <strong>{{ $wallet->name }} </strong>  Wallet Manually <a href="{{ route('wallets.details', $wallet->id) }}" class="label label-primary pull-right">Back</a>
             </div>
             
                 <div class="panel-body">
 
-                    
-                
-
-                <form action="{{ route('wallets.manualfund.store', $wallet->id) }}" method="POST" class="form-horizontal">
+                <form action="{{ action('Admin\WalletController@manualfundstore', $wallet->id) }}" method="POST" class="form-horizontal">
                     {{ csrf_field() }}
+                    <input type="hidden" name="method" value="Manual Funding">
+                    <input type="hidden" name="status" value="Completed">
                     <div class="form-group">
                         <label class="control-label col-sm-2" >Wallet Name</label>
                         <div class="col-sm-10">
@@ -33,48 +32,33 @@
                     </div>
 
                     <div class="form-group">
-                        <label class="control-label col-sm-2" >Reference Code</label>
+                        <label class="control-label col-sm-2" >Reason</label>
                         <div class="col-sm-10">
-                            <input type="text" name="ref_code" id="ref_code" class="form-control" value="{{ $wallet->ref_code }}">
+                            <input type="text" name="name" id="name" class="form-control" v>
 
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label class="control-label col-sm-2" >Currency</label>
+                        <label class="control-label col-sm-2" >Amount</label>
                         <div class="col-sm-10">
-                            <input type="text" name="currency" id="currency" class="form-control"
-                            value="{{ $wallet->currency }}">
+                            <input type="text" name="amount" id="amount" class="form-control" v>
 
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label class="control-label col-sm-2" >Rule</label>
+                        <label class="control-label col-sm-2" >Comment</label>
                         <div class="col-sm-10">
-                            <select name="rule_id" id="rule_id">
-                                <option value="1">Starter</option>
-                                <option value="2">Premium</option>
-                                <option value="3">Platinum</option>
-                            </select>
+                            
+                            <textarea name="comment" id="comment" class="form-control"></textarea>
 
                         </div>
                     </div>
-
-                    <div class="form-group">
-                        <label class="control-label col-sm-2" >Status</label>
-                        <div class="col-sm-10">
-                            <select name="status" id="status">
-                                <option value="1">Active</option>
-                                <option value="0">Disabled</option>
-                                
-                            </select>
-
-                        </div>
-                    </div>
+                    
                     <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-10">
-                            <input type="submit" class="btn btn-default" value="Update Post" />
+                            <input type="submit" class="btn btn-default" value="Fund Wallet" />
                         </div>
                     </div>
                 </form>
