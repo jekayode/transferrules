@@ -9,6 +9,7 @@ use Session;
 
 use App\Wallet;
 use App\Beneficiary;
+use DB;
 
 class WalletController  extends Controller
 {
@@ -36,9 +37,11 @@ class WalletController  extends Controller
     public function details($id){
         //fetch wallet data
         $wallet = Wallet::find($id);
+
+        $beneficiaries  = DB::table('beneficiaries')->where('wallet_id', $id)->get();
         
         //pass wallets data to view and load list view
-        return view('admin.wallets.details', ['wallet' => $wallet]);
+        return view('admin.wallets.details', compact('wallet', 'beneficiaries'));
     }
     
     public function add(){
