@@ -125,7 +125,7 @@ class WalletController  extends Controller
             'name' => 'required',
             'amount' => 'required',
             'user_id' => 'required',
-            'walled_id' => 'required',
+            'wallet_id' => 'required',
             'method' => 'required',
             'status' => 'required'
         ]);
