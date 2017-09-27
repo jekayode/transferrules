@@ -6,6 +6,14 @@
 <div class="row">
     <div class="col-lg-12">
     	<br>
+
+        @if($errors->any())
+            <div class="alert alert-danger">
+            @foreach($errors->all() as $error)
+                <p>{{ $error }}</p>
+            @endforeach()
+            </div>
+        @endif
         
         <div class="panel panel-default">
             <div class="panel-heading">
@@ -53,7 +61,7 @@
                     <div class="form-group">
                         <label class="control-label col-sm-2" >Account Number</label>
                         <div class="col-sm-10">
-                            <input type="text" name="acount_number" id="acount_number" class="form-control">
+                            <input type="text" name="account_number" id="account_number" class="form-control">
                         </div>
                     </div>
 
