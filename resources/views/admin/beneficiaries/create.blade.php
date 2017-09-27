@@ -39,7 +39,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label class="control-label col-sm-2" >Rule</label>
+                        <label class="control-label col-sm-2" >Bank Name</label>
                         <div class="col-sm-10">
                             <select name="bank_id" id="bank_id">
                                 

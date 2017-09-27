@@ -51,9 +51,9 @@ class BeneficiaryController  extends Controller
         //validate beneficiary data
         $this->validate($request, [
             'name' => 'required',
-            'currency' => 'required',
-            'rule_id' => 'required',
-            'ref_code' => 'required',
+            'wallet_id' => 'required',
+            'bank_id' => 'required',
+            'account_number' => 'required',
             'status' => 'required'
         ]);
         
