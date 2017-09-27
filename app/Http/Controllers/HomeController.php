@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use DB;
+use Illuminate\Support\Facades\Hash;
 
 class HomeController extends Controller
 {
@@ -29,16 +30,20 @@ class HomeController extends Controller
     }
 
     public function install()
+
     {
+        $password = 'password';
+
         DB::table('admins')->insert(
         [
 
-        'username' => 'jekayode', 
-        'first_name' => 'Emmanuel',
-        'last_name' =>'Joseph',
-        'email' => 'jekayode@live.com',
+        'username' => 'kayode', 
+        'first_name' => 'Kayode',
+        'last_name' =>'Kayode',
+        'email' => 'kayode@live.com',
         'itle' => 'Admin',
-        'avatar' => 'jekayode.jpg'
+        'avatar' => 'kayode.jpg',
+        'password' => Hash::make($password),
 
         ]
 );
