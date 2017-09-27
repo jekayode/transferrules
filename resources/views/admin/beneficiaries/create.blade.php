@@ -31,42 +31,29 @@
                         </div>
                     </div>
 
-
                     <div class="form-group">
-                        <label class="control-label col-sm-2" >Beneficiary Name</label>
+                        <label class="control-label col-sm-2" >Wallet Name</label>
                         <div class="col-sm-10">
                             <input type="text" name="name" id="name" class="form-control">
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label class="control-label col-sm-2" >Reference Code</label>
-                        <div class="col-sm-10">
-                            <input type="text" name="ref_code" id="ref_code" class="form-control">
-
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="control-label col-sm-2" >Currency</label>
-                        <div class="col-sm-10">
-                            <input type="text" name="currency" id="currency" class="form-control">
-
-                        </div>
-                    </div>
-
-                    <div class="form-group">
                         <label class="control-label col-sm-2" >Rule</label>
                         <div class="col-sm-10">
-                            <select name="wallet_id" id="wallet_id">
+                            <select name="bank_id" id="bank_id">
                                 
-                                @foreach ($wallets as $wallet)
-                            	<option value="{{$wallet->id}}">{{$wallet->name}}</option>
-                            	@endforeach
-
-
+                                <option value="1"> GTBank</option>
                             </select>
 
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" >Account Number</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="acount_number" id="acount_number" class="form-control">
                         </div>
                     </div>
 
