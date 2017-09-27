@@ -4,6 +4,12 @@
 
 @section('content')
 
+<?php
+
+$tbeneficiaries = count($beneficiaries);
+
+?>
+
       <div class="row">
         <br>
 
@@ -22,7 +28,7 @@
                   <b>Total Balance</b> <a class="pull-right">N1,000</a>
                 </li>
                 <li class="list-group-item">
-                  <b>Total Beneficiaries</b> <a class="pull-right">0</a>
+                  <b>Total Beneficiaries</b> <a class="pull-right">{{$tbeneficiaries}}</a>
                 </li>
                 <li class="list-group-item">
                   <b>Reference Code</b> <a class="pull-right">1{{ $wallet->ref_code }}</a>
