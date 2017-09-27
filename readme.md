@@ -1,3 +1,2 @@
-# Multi-User Authentication Tutorail
-
-_Produced by DevMarketer_
+# transferrules
+TransferRules for Hotels.ng 
