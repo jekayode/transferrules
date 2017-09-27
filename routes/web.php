@@ -46,6 +46,12 @@ Route::prefix('admin')->group(function() {
   Route::post('/wallets/update/{id}', 'Admin\WalletController@update')->name('wallets.update');
   Route::get('/wallets/delete/{id}', 'Admin\WalletController@delete')->name('wallets.delete');
 
+  Route::get('/wallets/manualfund/{id}', 'Admin\WalletController@manualfund')->name('wallets.manualfund');
+  Route::post('/wallets/manualfund/{id}', 'Admin\WalletController@manualfundstore')->name('wallets.manualfund.store');
+
+  Route::get('/wallets/ravefund/{id}', 'Admin\WalletController@ravefund')->name('wallets.ravefund');
+  Route::post('/wallets/manualfund/{id}', 'Admin\WalletController@ravefundstore')->name('wallets.ravefund.store');
+
   //Beneficiaries Routes
 
   Route::get('/beneficiaries', 'Admin\BeneficiaryController@index')->name('beneficiaries.index');

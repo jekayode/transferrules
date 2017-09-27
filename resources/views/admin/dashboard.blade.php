@@ -45,7 +45,7 @@ $tfunds = count($funds);
             <div class="icon">
               <i class="fa fa-credit-card"></i>
             </div>
-            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="{{route('wallets.index')}}" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
 
@@ -97,7 +97,7 @@ $tfunds = count($funds);
                   <th>Name</th>
                   <th>Currency</th>
                   <th>Status</th>
-                  <th colspan="2" >Action</th>
+                  <th >Action</th>
                   
                 </tr>
                 </thead>
@@ -109,8 +109,11 @@ $tfunds = count($funds);
                   <td>{{$wallet->name}}</td>
                   <td>{{$wallet->currency}}</td>
                   <td>{{$wallet->status}}</td>
-                  <td><a href="" class="btn btn-warning">Edit</a></td>
-                  <td><a href="" class="btn btn-danger">Delete</a></td>
+                  <td>
+                                <a href="{{ route('wallets.details', $wallet->id) }}" class="btn btn-success">Details</a>
+                                <a href="{{ route('wallets.edit', $wallet->id) }}" class="btn btn-warning">Edit</a>
+                                <a href="{{ route('wallets.delete', $wallet->id) }}" class="btn btn-danger" onclick="return confirm('Are you sure to archive this wallet?')">Archive</a>
+                            </td>
                 </tr>
 
               @endforeach

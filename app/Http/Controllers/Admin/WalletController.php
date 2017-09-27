@@ -107,5 +107,34 @@ class WalletController  extends Controller
 
         return redirect()->route('wallets.index');
     }
+
+
+    public function manualfund($id){
+        //get wallet data by id
+        $wallet = Wallet::find($id);
+        
+        //load form view
+        return view('admin.wallets.manualfund', ['wallet' => $wallet]);
+    }
+
+    public function manualfundstore($id, Request $request){
+        //validate wallet data
+        $this->validate($request, [
+            'name' => 'required',
+            'currency' => 'required',
+            'rule_id' => 'required',
+            'ref_code' => 'required',
+            'status' => 'required'
+        ]);
+        
+        //get wallet data
+        $walletData = $request->all();
+        
+        //update wallet data
+        Wallet::find($id)->update($walletData);
+
+        return redirect()->route('admin.wallets.index')->with('success','wallet update successfully!');
+    }
+
     
 }

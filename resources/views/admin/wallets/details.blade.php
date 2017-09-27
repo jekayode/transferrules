@@ -33,7 +33,18 @@ $tbeneficiaries = count($beneficiaries);
                 <li class="list-group-item">
                   <b>Reference Code</b> <a class="pull-right">1{{ $wallet->ref_code }}</a>
                 </li>
+
+                <li class="list-group-item">
+                 <a href="{{ route('wallets.manualfund', $wallet->id)}} " class="btn btn-warning">Manual Fund Wallet</a>
+                </li>
+                <li class="list-group-item">
+                  <a href="{{ route('wallets.ravefund', $wallet->id)}}" class="btn btn-info" >Add Fund Ravepay</a>
+                </li>
               </ul>
+
+              
+              <br>
+              
             </div>
             <!-- /.box-body -->
           </div>

@@ -19,9 +19,7 @@
         <li>
           <a href="#">
             <i class="fa fa-th"></i> <span>Admins</span>
-            <span class="pull-right-container">
-              <small class="label pull-right bg-green">5</small>
-            </span>
+            
           </a>
         </li>
         <li class="treeview">
@@ -42,9 +40,7 @@
         <li>
           <a href="#">
             <i class="fa fa-briefcase"></i> <span>Transactions</span>
-            <span class="pull-right-container">
-              <small class="label pull-right bg-green">5</small>
-            </span>
+            
           </a>
         </li>
 	
