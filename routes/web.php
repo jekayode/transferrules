@@ -50,7 +50,7 @@ Route::prefix('admin')->group(function() {
   Route::post('/wallets/manualfund/{id}', 'Admin\WalletController@manualfundstore')->name('wallets.manualfund.store');
 
   Route::get('/wallets/ravefund/{id}', 'Admin\WalletController@ravefund')->name('wallets.ravefund');
-  Route::post('/wallets/manualfund/{id}', 'Admin\WalletController@ravefundstore')->name('wallets.ravefund.store');
+  Route::post('/wallets/ravefund/{id}', 'Admin\WalletController@ravefundstore')->name('wallets.ravefund.store');
 
   //Beneficiaries Routes
 

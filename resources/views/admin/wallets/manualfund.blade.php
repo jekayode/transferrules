@@ -20,14 +20,16 @@
             
                 <div class="panel-body">
 
-                <form action="{{ action('Admin\WalletController@manualfundstore', $wallet->id) }}" method="POST" class="form-horizontal">
+                <form action="{{ route('wallets.manualfund.store', $wallet->id) }}" method="POST" class="form-horizontal">
                     {{ csrf_field() }}
                     <input type="hidden" name="method" value="Manual Funding">
                     <input type="hidden" name="status" value="Completed">
+                    <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
+                    <input type="hidden" name="wallet_id" value="{{ $wallet->id }}">
                     <div class="form-group">
                         <label class="control-label col-sm-2" >Wallet Name</label>
                         <div class="col-sm-10">
-                            <input type="text" name="name" id="name" class="form-control" value="{{ $wallet->name }}" disabled="disabled">
+                            <input type="text" name="wallet" id="wallet" class="form-control" value="{{ $wallet->name }}" disabled="disabled">
                         </div>
                     </div>
 
